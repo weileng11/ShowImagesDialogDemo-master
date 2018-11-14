@@ -34,11 +34,14 @@ public class ShowImagesDialog extends Dialog {
     private List<String> mTitles;
     private List<View> mViews;
     private ShowImagesAdapter mAdapter;
+	//默认显示第几张
+	private int position=0;
 
-    public ShowImagesDialog(@NonNull Context context, List<String> imgUrls) {
+    public ShowImagesDialog(@NonNull Context context, List<String> imgUrls,int p) {
         super(context, R.style.transparentBgDialog);
         this.mContext = context;
         this.mImgUrls = imgUrls;
+	    this.position=p;
         initView();
         initData();
     }
@@ -93,8 +96,11 @@ public class ShowImagesDialog extends Dialog {
 
         mAdapter = new ShowImagesAdapter(mViews, mTitles);
         mViewPager.setAdapter(mAdapter);
-        mIndexText.setText(1 + "/" + mImgUrls.size());
-        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+	    //默认显示第一张
+        mIndexText.setText(position+1 + "/" + mImgUrls.size());
+	    //是否需要显示默认的一张
+	    mViewPager.setCurrentItem(position);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -111,5 +117,11 @@ public class ShowImagesDialog extends Dialog {
             }
         });
     }
-
+	
+    //是否外围关闭dialog
+	@Override
+	public boolean onTouchEvent(@NonNull MotionEvent event){
+		dismiss();
+		return super.onTouchEvent(event);
+	}
 }

@@ -11,6 +11,10 @@ import com.damon43.showimagesdialogdemo.component.ShowImagesDialog;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Created by burce on 2018/11/14.
+ */
 public class MainActivity extends AppCompatActivity {
 
 
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_show_imgs).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ShowImagesDialog(MainActivity.this, urls).show();
+                new ShowImagesDialog(MainActivity.this, urls,2).show();
             }
         });
     }
