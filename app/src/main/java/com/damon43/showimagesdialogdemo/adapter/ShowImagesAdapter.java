@@ -8,9 +8,8 @@ import android.view.ViewGroup;
 import java.util.List;
 
 /**
- * Created by Administrator on 2017/5/3.
+ * Created by burce on 2017/5/3.
  */
-
 public class ShowImagesAdapter extends PagerAdapter {
 
     private List<View> views;

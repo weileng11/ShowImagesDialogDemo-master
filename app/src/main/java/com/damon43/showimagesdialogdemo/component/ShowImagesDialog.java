@@ -5,14 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ImageView;
+import android.view.*;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
@@ -20,15 +14,13 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.damon43.showimagesdialogdemo.R;
 import com.damon43.showimagesdialogdemo.adapter.ShowImagesAdapter;
 import com.damon43.showimagesdialogdemo.base.Config;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import uk.co.senab.photoview.PhotoView;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 /**
- * Created by Administrator on 2017/5/3.
+ * Created by burce on 2018/11/14.
  * 嵌套了viewpager的图片浏览
  */
 
